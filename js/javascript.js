@@ -1,4 +1,4 @@
-function computerChoice() {
+function getComputerChoice() {
     //use Math.floor to round number down to nearest integer
     //Multiply Math.random by 3 so that the values are [0,3)
     let num = Math.floor(Math.random() * 3);
@@ -17,4 +17,4 @@ function computerChoice() {
     return decision;
 }
 
-console.log(computerChoice());
+console.log(getComputerChoice());
