@@ -41,42 +41,15 @@ function rps(computer, user) {
 rps(computer, user);
 
 //Determines winner
-if (computer == "Rock" && user == "Rock") {
+if (computer == user) {
     
     console.log("It's a tie. Nobody wins.");
 }
 
-else if (computer == "Rock" && user == "Paper") {
+else if (computer == "Rock" && user.toLowerCase() == "paper" || computer == "Paper" && user.toLowerCase() == "scissors" || computer == "Scissors" && user.toLowerCase() == "rock") {
     console.log("Congratulations! You beat the computer!");
 }
 
-else if (computer == "Rock" && user == "Scissors") {
+else {
     console.log("Sorry the computer wins this game.");
 }
-
-else if (computer == "Paper" && user == "Rock") {
-    
-    console.log("Sorry the computer wins this game.");
-}
-
-else if (computer == "Paper" && user == "Paper") {
-    console.log("It's a tie. Nobody wins.");
-}
-
-else if (computer == "Paper" && user == "Scissors") {
-    console.log("Congratulations! You beat the computer!");
-}
-
-if (computer == "Scissors" && user == "Rock") {
-    
-    console.log("Congratulations! You beat the computer!");
-}
-
-else if (computer == "Scissors" && user == "Paper") {
-    console.log("Sorry the computer wins this game.");
-}
-
-else if (computer == "Scissors" && user == "Scissors") {
-    console.log("It's a tie. Nobody wins.");
-}
-
