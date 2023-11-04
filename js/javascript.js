@@ -1,3 +1,4 @@
+//Create function to randomly decide computer choice
 function getComputerChoice() {
     //use Math.floor to round number down to nearest integer
     //Multiply Math.random by 3 so that the values are [0,3)
@@ -17,4 +18,13 @@ function getComputerChoice() {
     return decision;
 }
 
-console.log(getComputerChoice());
+
+
+//ask the user for their input
+function getUserChoice() {
+    let choice = prompt("What do you pick? Rock, Paper, Scissors");
+console.log("User: " + choice);
+}
+
+getUserChoice();
+console.log("Computer: " + getComputerChoice());
