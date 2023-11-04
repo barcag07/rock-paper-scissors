@@ -1,4 +1,11 @@
+let playAgain;
 
+//set initializers
+let computerScore = 0;
+let userScore = 0;
+let round = 1;
+
+do {
 //Create function to randomly decide computer choice
 function getComputerChoice() {
     //use Math.floor to round number down to nearest integer
@@ -37,19 +44,48 @@ function rps(computer, user) {
     console.log("User: " + user);
 }
 
+console.log("Round " + round);
+
 //calls function of rps to display results with values from computer and user values
 rps(computer, user);
 
-//Determines winner
+//Determines winner of round
 if (computer == user) {
     
-    console.log("It's a tie. Nobody wins.");
+    alert("It's a tie. Nobody wins.");
+    userScore += 0;
+    computerScore += 0;
 }
 
 else if (computer == "Rock" && user.toLowerCase() == "paper" || computer == "Paper" && user.toLowerCase() == "scissors" || computer == "Scissors" && user.toLowerCase() == "rock") {
-    console.log("Congratulations! You beat the computer!");
+    alert("Congratulations! You beat the computer!");
+    userScore++;
 }
 
 else {
-    console.log("Sorry the computer wins this game.");
+    alert("Sorry the computer wins this game.");
+    computerScore++;
+}
+
+console.log("Computer Score: " + computerScore + "\tUser Score: " + userScore);
+
+playAgain = prompt("Would you like to play again?");
+round++;
+
+console.log("");
+
+}
+while (playAgain.toLowerCase() == "yes");
+
+//Determine winner of whole game
+if (computerScore > userScore) {
+    console.log("The computer is the winner of the whole game. Better luck next time.");
+}
+
+else if (computerScore < userScore) {
+    console.log("Way to go! You beat the computer!");
+}
+
+else {
+    console.log("Looks like you and the computer tied. Nobody wins.");
 }
