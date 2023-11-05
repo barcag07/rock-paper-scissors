@@ -1,11 +1,11 @@
-let playAgain;
+// let playAgain;
 
 //set initializers
 let computerScore = 0;
 let userScore = 0;
 let round = 1;
 
-do {
+// do {
 //Create function to randomly decide computer choice
 function getComputerChoice() {
     //use Math.floor to round number down to nearest integer
@@ -26,28 +26,27 @@ function getComputerChoice() {
     return compDecision;
 }
 
-let computer = getComputerChoice();
+// let computer = getComputerChoice();
 
 
 
 //ask the user for their input
 function getUserChoice() {
-    let userChoice = prompt("What do you pick? Rock, Paper, Scissors");
+    let userChoice = prompt("Round " + round + "\nWhat do you pick? Rock, Paper, Scissors");
     return userChoice;
 }
 
-let user = getUserChoice();
+// let user = getUserChoice();
 
-//Create function of game (rps) that uses values from computer and user variable
-function rps(computer, user) {
+//Create function of game (playRound) that uses values from computer and user variable
+function playRound(computer, user) {
+    console.log("Round " + round);
     console.log("Computer: " + computer);
     console.log("User: " + user);
-}
+    
 
-console.log("Round " + round);
-
-//calls function of rps to display results with values from computer and user values
-rps(computer, user);
+//calls function of playRound to display results with values from computer and user values
+// playRound(computer, user);
 
 //Determines winner of round
 if (computer == user) {
@@ -69,13 +68,27 @@ else {
 
 console.log("Computer Score: " + computerScore + "\tUser Score: " + userScore);
 
-playAgain = prompt("Would you like to play again?");
+// playAgain = prompt("Would you like to play again?");
 round++;
 
 console.log("");
 
 }
-while (playAgain.toLowerCase() == "yes");
+
+function game() {
+    for (let i = 1; i <= 5; i++) {
+        const computer = getComputerChoice();
+        const user = getUserChoice();
+        playRound(computer, user);
+    }
+}
+
+
+
+game();
+// }
+// while (playAgain.toLowerCase() == "yes");
+
 
 //Determine winner of whole game
 if (computerScore > userScore) {
